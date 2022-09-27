@@ -728,6 +728,8 @@ a:hover {
 .publications {
   text-align: justify;
   margin-right: 5%;
+  overflow:hidden;
+  overflow-wrap: break-word;
 }
 /*======================================
 //--//-->   ABOUT
@@ -1377,6 +1379,10 @@ footer .credits a {
   .profile-picture {
     height: 200px;
     margin-top: 5%;
+  }
+
+  .publications {
+    overflow: auto;
   }
 }
 
