@@ -1345,6 +1345,9 @@ footer .credits a {
   display: none;
 }
 
+.clustermaps-div{
+  width: 15rem;
+}
 
 
 @media (min-width: 577px) {
@@ -1423,7 +1426,13 @@ footer .credits a {
   .publications {
     overflow: auto;
   }
+
+  .clustermaps-div{
+    width: 35rem;
+  }
+
 }
+
 
 @media (min-width: 992px) {
   .testimonial-box .description {
