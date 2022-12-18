@@ -80,7 +80,7 @@
 
                 <div class="container">
 
-                <img class="profile-picture" style="clip-path: circle(); opacity: .9;" alt="Jason Jabbour" src="img/jasonjabbour.jpg">
+                <img class="profile-picture" style="clip-path: circle(); opacity: 1;" alt="Jason Jabbour" src="img/jasonjabbour.jpg">
 
                 <!--<p class="display-6 color-d">Hello, world!</p>-->
                 <h1 class="intro-title mb-4"> Jason Jabbour</h1>
@@ -109,17 +109,44 @@
             </div>
         </div>
   </div>
-
-
-
   <!--/ Intro Skew End /-->
 
-  <!--  -------------- Research ------------------- -->
-  <section id="research" class="about-mf sect-pt4 route">
+
+  <!--  --------------- About Me ------------------ -->
+  <section id="about-me" class="about-mf sect-pt3 route">
     <div class="container">
       <div class="col-sm-12">
         <div class="title-box text-center">
-          <h3 class="title-a">
+          <h3 class="title-b">
+            About Me
+          </h3>
+          <p class="subtitle-a">
+            <!-- Can add sub text here -->
+          </p>
+          <div class="line-mf"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="offset-sm-1 col-sm-10">
+          <div class="box-shadow-full">
+            <p>Hi! I am Jason Jabbour, a Computer Science PhD student in my first year at Harvard University. 
+              I am a member of the <a class="my-colored-link"  href="https://edge.seas.harvard.edu/"  aria-label="Edge Computing Lab">Edge Computing Lab</a> 
+              under the mentorship of <a class="my-colored-link"  href="https://scholar.harvard.edu/vijay-janapa-reddi"  aria-label="Professor Vijay Janapa Reddi">Professor Vijay Janapa Reddi</a>. 
+              My research focuses on real-world reinforcement learning, robotics, and autonomous vehicles. I graduated from the University of Virginia in
+              2022 with a Bachelor's degree in Systems Engineering.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End News ----------------------------------- -->
+
+  <!--  -------------- Research ------------------- -->
+  <section id="research" class="about-mf sect-pt1 route">
+    <div class="container">
+      <div class="col-sm-12">
+        <div class="title-box text-center">
+          <h3 class="title-b">
             Research
           </h3>
           <p class="subtitle-a">
@@ -129,42 +156,58 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-12">
-          <!-- Harvard Edge Computing -->
+        <div class="offset-sm-1 col-sm-10 ">
+
+          <!-- 
+            
+            
+            -----------------------------------
+            
+            Harvard Edge Computing
+          
+            ----------------------------------
+          
+          
+          
+          -->
           <div class="box-shadow-full">
             <div class="row">
               <!-- Harvard Image Logo -->
               <div class="col-md-4">
+                <!-- Add Text on the Left -->
+              </div>
+              <div class="col-md-5">
                 <div class="about-img">
-                  <a href="https://edge.seas.harvard.edu/" aria-label="Harvard Edge Computing Lab"><img alt="Harvard Edge Lab" src="img/harvard_edge_main.png" class="img-fluid rounded b-shadow-a" style="width: 70%;"></a> 
+                  <a href="https://edge.seas.harvard.edu/" aria-label="Harvard Edge Computing Lab"><img alt="Harvard Edge Computing Lab" src="img/harvard_edge_main.png" class="img-fluid rounded b-shadow-a" style="width: 70%;"></a> 
                 </div>
               </div>
-              <div class="col-md-4">
-                <!-- Add Text in the Middle -->
-              </div>
-              <!-- Year and Title -->
               <div class="col-md-4 my-justify-right">
-
-                <!-- Title -->
-                <div class="card-body">
-                  <div class="card-category-box-right">
-                    <div class="card-category2">
-                      <h6 class="category">Reinforcement Learning Research</h6>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Year -->
-                <div class="card-body">
-                  <div class="card-category-box-right">
-                    <div class="card-category">
-                      <h6 class="category">2021 - Present</h6>
-                    </div>
-                  </div>
-                </div>
-                
+                <!-- add labels on the right -->
               </div>
             </div>
+
+            <div class="row">
+              <!-- Title -->
+              <div class="card-body">
+                <div class="card-category-box-left">
+                  <div class="card-category2">
+                    <h6 class="category">Reinforcement Learning Research</h6>
+                  </div>
+                </div>
+              </div>
+            </div>  
+
+            <div class="row">
+              <!-- Year -->
+              <div class="card-body">
+                <div class="card-category-box-left">
+                  <div class="card-category">
+                    <h6 class="category">Fall 2021 - Spring 2022</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+              
 
             <!-- Images -->
             <div class="row">
@@ -178,67 +221,112 @@
 
             <br>
 
+            <!-- Learn More Button -->
+            <div class="row list-ico">
+              <div class="col-md-12">
+                <button class="button" id="bittle-learn-more-btn" style="text-align: center;" onclick="revealLearnMoreInfo('bittle-hidden-div','bittle-learn-more-btn')">
+                  Learn More &nbsp<span class="ion-chevron-down"></span>
+                </button>
+              </div>
+            </div>
+
             <!-- Description -->
-            <div class="row" style="margin-left: 5%;">
+            <div class="row hidden" id="bittle-hidden-div" style="margin-left: 2%; margin-right: 2%;">
+              <p> <b>Abstract</b></p>
+              <p align="justify">Automating robust walking gaits for legged robots
+                has been a long-standing challenge. Previous work has achieved
+                robust locomotion gaits on sophisticated quadruped hardware
+                platforms through the use of reinforcement learning and imitation
+                learning. However, these approaches do not consider the strict
+                constraints of ultra-low-cost robot platforms with limited computing resources,
+                 few sensors, and restricted actuation. These constrained robot platforms 
+                 require special attention to successfully
+                transfer skills learned in simulation to reality. As a step toward
+                robust learning pipelines for these constrained robot platforms,
+                we demonstrate how existing state-of-the-art imitation learning
+                pipelines can be modified and augmented to support low-cost,
+                limited hardware. By reducing our model’s observational space,
+                leveraging TinyML to quantize our model, and adjusting the
+                model outputs through post-processing, we are able to learn and
+                deploy successful walking gaits on an 8-DoF, $299 (USD) toy
+                quadruped robot that has reduced actuation and sensor feedback,
+                as well as limited computing resources.</p>
+
+              <p> <b>Accomplishments Summary</b></p>
 
               <ul class="list-ico">
                 <li><span class="ion-chevron-right"></span>
-                  Enabled a constrained quadruped robot platform to overcome cheap hardware through artificial intelligence
+                  Utilized artificial intelligence to overcome limitations of cheap hardware in a constrained quadruped robot
                 </li>
 
                 <li><span class="ion-chevron-right"></span>
-                  Modeled a reinforcement learning problem of a constrained robot in simulation using OpenAI Gym & PyBullet
+                  Modeled a reinforcement learning problem of a constrained robot in simulation using OpenAI Gym and PyBullet
                 </li>
 
                 <li><span class="ion-chevron-right"></span>
-                  Applied TinyML techniques including Float16 quantization and graph freezing to reduce the ML model size
+                  Investigated methods for reducing the Sim2Real gap in robotic systems with limited sensing feedback
                 </li>
 
                 <li><span class="ion-chevron-right"></span>
-                  Transferred the Stable Baselines model to TFLite and deployed the ML model on a limited computing platform
+                  Applied TinyML optimization techniques to reduce the size of a reinforcement learning model by 1000%
+                </li>
+
+                <li><span class="ion-chevron-right"></span>
+                  Implemented a pipeline for deploying a Stable Baselines model on an embedded system using TFLite
                 </li>
               </ul>
-
             </div>
-
           </div>
 
-          <!-- Johns Hopkins University Applied Physics Lab -->
+          <!--
+            
+            
+            -----------------------------------------------
+            
+            
+            Johns Hopkins University Applied Physics Lab
+          
+          
+            -----------------------------------------------
+          
+          
+          -->
           <div class="box-shadow-full">
             <div class="row">
               <!-- JHU Image Logo -->
               <div class="col-md-4">
+              </div>
+              <div class="col-md-5">
                 <div class="about-img">
                   <a href="https://www.jhuapl.edu/" aria-label="Johns Hopkins University Applied Physics Lab JHU APL"><img alt="Johns Hopkins University Applied Physics Lab" src="img/jhuapl_logo.png" class="img-fluid rounded b-shadow-a" style="width: 80%;"></a> 
                 </div>
               </div>
-              <div class="col-md-4">
-                <!-- Add Text in the Middle -->
-              </div>
-              <!-- Year and Title -->
-              <div class="col-md-4 my-justify-right">
-
-                <!-- Title -->
-                <div class="card-body">
-                  <div class="card-category-box-right">
-                    <div class="card-category2">
-                      <h6 class="category">Machine Learning Security Engineer</h6>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Year -->
-                <div class="card-body">
-                  <div class="card-category-box-right">
-                    <div class="card-category">
-                      <h6 class="category">Summer 2022</h6>
-                    </div>
-                  </div>
-                </div>
-                
+              <div class="col-md-4 my-justify-right">                
               </div>
             </div>
 
+            <div class="row">
+              <!-- Title -->
+              <div class="card-body">
+                <div class="card-category-box-left">
+                  <div class="card-category2">
+                    <h6 class="category">Machine Learning Security Engineer Intern</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <!-- Year -->
+              <div class="card-body">
+                <div class="card-category-box-left">
+                  <div class="card-category">
+                    <h6 class="category">Summer 2022</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
             <!-- Images -->
             <div class="row">
               <div class="col-md-6">
@@ -251,16 +339,36 @@
 
             <br>
 
+            <!-- Learn More Button -->
+            <div class="row list-ico">
+              <div class="col-md-12">
+                <button class="button" id="jhuapl-learn-more-btn" style="text-align: center;" onclick="revealLearnMoreInfo('jhuapl-hidden-div','jhuapl-learn-more-btn')">
+                  Learn More &nbsp<span class="ion-chevron-down"></span>
+                </button>
+              </div>
+            </div>
+
             <!-- Description -->
-            <div class="row" style="margin-left: 5%;">
+            <div class="row hidden" id="jhuapl-hidden-div" style="margin-left: 2%; margin-right: 2%;">
+
+              <p> <b>Abstract</b></p>
+              <p align="justify">
+                Securing network traffic on US Navy ships protects a ship from cyber-attacks 
+                which can have serious consequences. Cyber attacks can disrupt a ship's operations, 
+                cause damage to systems and equipment, and pose a threat to the safety of the crew. A reinforcement learning 
+                agent was trained to analyze network traffic data and identify anomalies that may indicate an attack is underway.
+                By detecting attacks early on, the agent can alert peer systems to initiate countermeasures and mitigate the threat.
+              </p>
+
+              <p> <b>Accomplishments Summary</b></p>
 
               <ul class="list-ico">
                 <li><span class="ion-chevron-right"></span>
-                  Developed an artificial intelligence system to secure network traffic on board US Navy ships
+                  Designed and built a prototype AI system for securing network traffic on US Navy ships
                 </li>
 
                 <li><span class="ion-chevron-right"></span>
-                  Simulated US Navy ships navigating to waypoints while under cyber-attack using ROS, Gazebo, & OpenAI Gym
+                  Simulated cyber-attacks on US Navy ships navigating to waypoints using ROS, Gazebo, and OpenAI Gym
                 </li>
 
                 <li><span class="ion-chevron-right"></span>
@@ -268,7 +376,7 @@
                 </li>
 
                 <li><span class="ion-chevron-right"></span>
-                  Interpreted model by developing a dashboard in Flask to easily visualize network traffic and detected attacks
+                  Created a Flask-based dashboard for visualizing network traffic and detected attacks
                 </li>
               </ul>
 
@@ -276,39 +384,52 @@
             </div>
           </div>
 
-          <!-- Cornell Mathematics -->
+          <!-- 
+            
+            
+            
+            --------------------------
+            
+            Cornell Mathematics
+          
+            -------------------------
+          
+          
+          
+          -->
           <div class="box-shadow-full">
             <div class="row">
               <!-- Cornell Image Logo -->
               <div class="col-md-4">
+              </div>
+              <div class="col-md-5">
                 <div class="about-img">
-                  <a href="https://math.cornell.edu/history-reu-and-spur-summer-program-undergraduate-research-programs" aria-label="Cornell Mathematics Department Summer Research Program"><img alt="Cornell University Logo" src="img/cornellogo.png" class="img-fluid rounded b-shadow-a" style="width: 40%;"></a> 
-                </div>
+                  <a href="https://math.cornell.edu/history-reu-and-spur-summer-program-undergraduate-research-programs" aria-label="Cornell Mathematics Department Summer Research Program"><img alt="Cornell University Logo" src="img/cornellogo.png" class="img-fluid rounded b-shadow-a" style="width: 80%;"></a> 
+                </div>              
               </div>
-              <div class="col-md-4">
-                <!-- Add Text in the Middle -->
-              </div>
-              <!-- Year and Title -->
               <div class="col-md-4 my-justify-right">
+              </div>
+            </div>
 
-                <!-- Title -->
-                <div class="card-body">
-                  <div class="card-category-box-right">
-                    <div class="card-category2">
-                      <h6 class="category">Mathematics Research (SPUR)</h6>
-                    </div>
+            <div class="row">
+              <!-- Title -->
+              <div class="card-body">
+                <div class="card-category-box-left">
+                  <div class="card-category2">
+                    <h6 class="category">Mathematics Research (SPUR)</h6>
                   </div>
                 </div>
+              </div>            
+            </div>
 
-                <!-- Year -->
-                <div class="card-body">
-                  <div class="card-category-box-right">
-                    <div class="card-category">
-                      <h6 class="category">Summer 2020</h6>
-                    </div>
+            <div class="row">
+              <!-- Year -->
+              <div class="card-body">
+                <div class="card-category-box-left">
+                  <div class="card-category">
+                    <h6 class="category">Summer 2020</h6>
                   </div>
                 </div>
-                
               </div>
             </div>
 
@@ -324,8 +445,35 @@
 
             <br>
 
+            <!-- Learn More Button -->
+            <div class="row list-ico">
+              <div class="col-md-12">
+                <button class="button" id="cornellspur-learn-more-btn" style="text-align: center;" onclick="revealLearnMoreInfo('cornellspur-hidden-div','cornellspur-learn-more-btn')">
+                  Learn More &nbsp<span class="ion-chevron-down"></span>
+                </button>
+              </div>
+            </div>
+
             <!-- Description -->
-            <div class="row" style="margin-left: 5%;">
+            <div class="row hidden" id="cornellspur-hidden-div" style="margin-left: 2%; margin-right: 2%;">
+
+              <p> <b>Abstract</b></p>
+              <p align="justify">
+                We apply optimal control theory to study the stable equilibrium
+                shapes of a Möbius band that is modeled as an anisotropic elastic rod. Although previous
+                work has focused on determining the equilibrium shapes of a Möbius band, little is known
+                about the mechanics of how a circular rod deforms into a Möbius band as its ends are twisted.
+                In this talk, we will show that a circular rod can experience a pitchfork bifurcation during
+                this deformation. Using the necessary and sufficient conditions for optimality from optimal
+                control theory, we numerically analyze how the critical twist angle at which these bifurcations
+                occur depends on the stiffness parameters of the rod. Then, for a specific choice of stiffness
+                parameters, we explore the structure of these bifurcations. Our findings show that although
+                the elastic rod can bifurcate before being twisted into a Möbius band, all solution branches
+                resulting from the bifurcation converge to the same Möbius band shape.
+
+              </p>
+
+              <p> <b>Accomplishments Summary</b></p>
 
               <ul class="list-ico">
                 <li><span class="ion-chevron-right"></span>
@@ -333,11 +481,11 @@
                 </li>
 
                 <li><span class="ion-chevron-right"></span>
-                  Computed the critical twist angle of a Möbius band using numerical methods such as the Runge-Kutta method
+                  Computed the critical twist angle of a Möbius band using numerical methods including the Runge-Kutta method
                 </li>
 
                 <li><span class="ion-chevron-right"></span>
-                  Discovered the emergence of a supercritical pitchfork bifurcation at the points of instability
+                  Discovered the emergence of a supercritical pitchfork bifurcation at points of instability
                 </li>
 
                 <li><span class="ion-chevron-right"></span>
@@ -348,41 +496,57 @@
 
           </div>
 
-          <!-- UVA Research -->
+          <!-- 
+            
+            
+            
+            ---------------------
+
+
+
+            UVA Research 
+          
+          
+            ----------------------
+          
+          -->
           <div class="box-shadow-full">
             <div class="row">
               <!-- UVA Image Logo -->
               <div class="col-md-4">
+              </div>
+              <div class="col-md-5">
                 <div class="about-img">
-                  <a href="https://www.cs.virginia.edu/~yg9ca/alzheimers/index.html" aria-label="UVA Alzheimers Page"><img alt="University of Virginia (UVA) Logo" src="img/uvalogo.png" class="img-fluid rounded b-shadow-a" style="width: 50%;"></a> 
-                </div>
-              </div>
-              <div class="col-md-4">
-                <!-- Add Text in the Middle -->
-              </div>
+                  <a href="https://www.cs.virginia.edu/~yg9ca/alzheimers/index.html" aria-label="UVA Alzheimers Page"><img alt="University of Virginia (UVA) Logo" src="img/uvalogo.png" class="img-fluid rounded b-shadow-a" style="width: 55%;"></a> 
+                </div>              </div>
               <!-- Year and Title -->
               <div class="col-md-4 my-justify-right">
-
-                <!-- Title -->
-                <div class="card-body">
-                  <div class="card-category-box-right">
-                    <div class="card-category2">
-                      <h6 class="category">Smart healthcare Research</h6>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Year -->
-                <div class="card-body">
-                  <div class="card-category-box-right">
-                    <div class="card-category">
-                      <h6 class="category">Fall 2019 - Spring 2022</h6>
-                    </div>
-                  </div>
-                </div>
-                
               </div>
             </div>
+
+
+            <div class="row">
+              <!-- Title -->
+              <div class="card-body">
+                <div class="card-category-box-left">
+                  <div class="card-category2">
+                    <h6 class="category">Smart healthcare Research</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <!-- Year -->
+              <div class="card-body">
+                <div class="card-category-box-left">
+                  <div class="card-category">
+                    <h6 class="category">Fall 2019 - Spring 2022</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+
 
             <!-- Images -->
             <div class="row">
@@ -396,12 +560,32 @@
 
             <br>
 
+            <!-- Learn More Button -->
+            <div class="row list-ico">
+              <div class="col-md-12">
+                <button class="button" id="uvapcr-learn-more-btn" style="text-align: center;" onclick="revealLearnMoreInfo('uvapcr-hidden-div','uvapcr-learn-more-btn')">
+                  Learn More &nbsp<span class="ion-chevron-down"></span>
+                </button>
+              </div>
+            </div>
+
             <!-- Description -->
-            <div class="row" style="margin-left: 5%;">
+            <div class="row hidden" id="uvapcr-hidden-div" style="margin-left: 2%; margin-right: 2%;">
+              <p> <b>Abstract</b></p>
+              <p align="justify">Dementia caregivers often report increased anxiety and depression.
+                 In order to improve the interactions between in-home patients and caregivers, and
+                  reduce strain on caregivers, we build a monitoring, modeling, and interactive 
+                  recommendation system for caregivers for in-home dementia patient care. The system
+                   includes monitoring for mood by speech, building classifiers that work in realistic
+                    home settings, and supporting an adaptive recommendation system to reduce stress
+                     of the caregiver. </p>
+
+              <p> <b>Accomplishments Summary</b></p>
+
 
               <ul class="list-ico">
                 <li><span class="ion-chevron-right"></span>
-                  Applied machine learning techniques to improve Alzheimer’s patient-caregiver relationships 
+                  Applied voice-based machine learning techniques to improve Alzheimer’s patient-caregiver relationships
                 </li>
 
                 <li><span class="ion-chevron-right"></span>
@@ -417,7 +601,7 @@
                 </li>
 
                 <li><span class="ion-chevron-right"></span>
-                  Worked with healthcare professionals at OSU to deploy the RL and ML driven system in caregiver homes
+                  Worked with healthcare professionals at OSU to deploy the RL driven system in real-world caregiver homes
                 </li>
               </ul>
             </div>
@@ -430,11 +614,11 @@
 
 
   <!-- --------------- Projects -------------------- -->
-  <section id="projects" class="about-mf sect-pt4 route">
+  <section id="projects" class="about-mf sect-pt1 route">
     <div class="container">
       <div class="col-sm-12">
         <div class="title-box text-center">
-          <h3 class="title-a">
+          <h3 class="title-b">
             Projects
           </h3>
           <p class="subtitle-a">
@@ -444,62 +628,96 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-12">
+        <div class="offset-sm-1 col-sm-10">
 
-          <!-- QueueClass -->
+          <!-- 
+            
+            
+            
+            -------------------------------------
+
+            QueueClass 
+          
+            -----------------------------------
+          
+          
+          
+          -->
           <div class="box-shadow-full">
+            <div class="row">
+              <div class="col-sm-12 center-block text-center">
+                <p style="font-size: 1.2rem; color: #086375">
+                  <b>QueueClass.com</b> 
+                </p>
+              </div>
+            </div>
             <div class="row">
               <!-- Queue Image Logo -->
               <div class="col-md-4">
+              </div>
+              <div class="col-md-5">
                 <div class="about-img">
                   <a href="https://queueclass.com/" aria-label="QueueClass Website"><img alt="QueueClass Logo" src="img/queuelogo.png" class="img-fluid rounded b-shadow-a" style="width: 70%;"></a> 
                 </div>
               </div>
-              <div class="col-md-4">
-                <!-- Add Text in the Middle -->
-              </div>
-              <!-- Year and Title -->
               <div class="col-md-4 my-justify-right">
+              </div>
+            </div>
 
+
+            <div class="row">
                 <!-- Title -->
                 <div class="card-body">
-                  <div class="card-category-box-right">
+                  <div class="card-category-box-left">
                     <div class="card-category2">
                       <h6 class="category">Founder and Full Stack Developer</h6>
                     </div>
                   </div>
                 </div>
+            </div>
 
-                <!-- Year -->
-                <div class="card-body">
-                  <div class="card-category-box-right">
-                    <div class="card-category">
-                      <h6 class="category">2021 - Present</h6>
-                    </div>
+            <div class="row">
+              <!-- Year -->
+              <div class="card-body">
+                <div class="card-category-box-left">
+                  <div class="card-category">
+                    <h6 class="category">Summer 2021 - Present</h6>
                   </div>
                 </div>
-                
               </div>
             </div>
 
             <!-- Images -->
             <div class="row">
-              <div class="col-md-12">
-                <a href="https://queueclass.com/" aria-label="QueueClass Website"> <img alt="QueueClass Dashboard" src="img/queuedashboard.png" class="img-fluid rounded b-shadow-a" ></a> 
+              <div class="offset-md-2 col-md-8">
+                <a href="https://queueclass.com/" aria-label="QueueClass Website"> <img alt="QueueClass Dashboard" src="img/queuedashboard.png" class="img-fluid rounded b-shadow-a" style="width: 100%;"></a> 
               </div>
-
             </div>
 
             <br>
+            <!-- Learn More Button -->
+            <div class="row list-ico">
+              <div class="col-md-12">
+                <button class="button" id="queueclass-learn-more-btn" style="text-align: center;" onclick="revealLearnMoreInfo('queueclass-hidden-div','queueclass-learn-more-btn')">
+                  Learn More &nbsp<span class="ion-chevron-down"></span>
+                </button>
+              </div>
+            </div>
 
             <!-- Description -->
-            <div class="row" style="margin-left: 5%;">
+            <div class="row hidden" id="queueclass-hidden-div" style="margin-left: 2%; margin-right: 2%;">
+              <p> <b>Description</b></p>
+              <p align="justify">QueueClass.com is a platform that aims to improve the office 
+                hours experience for both students and teaching assistants. Many university 
+                courses have different methods for organizing office hours, such as creating
+                 their own websites, using Google forms, or relying on spreadsheets, which 
+                 can be confusing and time-consuming for students and teaching assistants. 
+                 QueueClass.com offers a central location for organizing office hours for 
+                 all courses, streamlining the process and saving valuable time for both parties.</p>
+
+              <p> <b>Accomplishments Summary</b></p>
 
               <ul class="list-ico">
-                <li><span class="ion-chevron-right"></span>
-                  A centralized office hours platform that streamlines the dissimilar approach of office hours between courses
-                </li>
-
                 <li><span class="ion-chevron-right"></span>
                   Built QueueClass.com to facilitate a smoother office hours experience for students and teaching assistants
                 </li>
@@ -521,47 +739,61 @@
 
           </div>
 
-          <!-- Murder Hornets -->
+          <!-- 
+            
+            
+            -----------------------------
+
+            Murder Hornets
+          
+            -----------------------------
+          
+          -->
           <div class="box-shadow-full">
             <div class="row">
               <!-- Data Science Image Logo -->
-              <div class="col-md-4">
-                <div class="about-img">
-                  <a href="https://datascience.virginia.edu/" aria-label="UVA Datascience"><img alt="University of Virginia School of Datascience" src="img/datascience.jpg" class="img-fluid rounded b-shadow-a" style="width: 80%;"></a> 
-                </div>
+              <div class="col-md-3">
               </div>
-              <div class="col-md-4">
-                <!-- Add Text in the Middle -->
+              <div class="col-md-6">
+                <div class="about-img">
+                  <a href="https://datascience.virginia.edu/" aria-label="UVA Datascience"><img alt="University of Virginia School of Datascience" src="img/datascience.jpg" class="img-fluid rounded b-shadow-a" style="width: 100%;"></a> 
+                </div>
               </div>
               <!-- Year and Title -->
               <div class="col-md-4 my-justify-right">
-
-                <!-- Title -->
-                <div class="card-body">
-                  <div class="card-category-box-right">
-                    <div class="card-category2">
-                      <h6 class="category">MURDER HORNET CLASSIFICATION</h6>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Year -->
-                <div class="card-body">
-                  <div class="card-category-box-right">
-                    <div class="card-category">
-                      <h6 class="category">January 2021</h6>
-                    </div>
-                  </div>
-                </div>
                 
               </div>
             </div>
 
+            <div class="row">
+              <!-- Title -->
+              <div class="card-body">
+                <div class="card-category-box-left">
+                  <div class="card-category2">
+                    <h6 class="category">MURDER HORNET CLASSIFICATION</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+
+              <!-- Year -->
+              <div class="card-body">
+                <div class="card-category-box-left">
+                  <div class="card-category">
+                    <h6 class="category">January 2021</h6>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
             <!-- Images -->
             <div class="row">
-              <div class="col-md-3"></div>
+              <div class="col-md-4"></div>
               <div class="col-md-6">
-                <img alt="Neural Network Classification of Murder Hornets" src="img/murder5.png" class="img-fluid rounded b-shadow-a" style="width: 100%;">
+                <img alt="Neural Network Classification of Murder Hornets" src="img/murder5.png" class="img-fluid rounded b-shadow-a" style="width: 60%;">
               </div>
               <div class="col-md-3"></div>
 
@@ -569,8 +801,20 @@
 
             <br>
 
+            <!-- Learn More Button -->
+            <div class="row list-ico">
+              <div class="col-md-12">
+                <button class="button" id="hornets-learn-more-btn" style="text-align: center;" onclick="revealLearnMoreInfo('hornets-hidden-div','hornets-learn-more-btn')">
+                  Learn More &nbsp<span class="ion-chevron-down"></span>
+                </button>
+              </div>
+            </div>
+
             <!-- Description -->
-            <div class="row" style="margin-left: 5%;">
+            <div class="row hidden" id="hornets-hidden-div" style="margin-left: 2%; margin-right: 2%;">
+
+              <p> <b>Accomplishments Summary</b></p>
+
 
               <ul class="list-ico">
                 <li><span class="ion-chevron-right"></span>
@@ -593,59 +837,69 @@
           <!-- WEF Comp -->
           <div class="box-shadow-full">
             <div class="row">
+              <div class="col-md-3">
+              </div>
               <!-- WEF Image Logo -->
-              <div class="col-md-4">
+              <div class="col-md-3">
                 <div class="about-img">
-                  <a href="https://engineering.virginia.edu/uva-team-wins-environmental-design-competition-qualifies-national-event" aria-label="WEF VWEA Competition"><img alt="WEF" src="img/wef.png" class="img-fluid rounded b-shadow-a" style="width: 40%;"></a> 
-                </div>
-                <div class="about-img">
-                  <a href="https://engineering.virginia.edu/uva-team-wins-environmental-design-competition-qualifies-national-event" aria-label="WEF VWEA Competition"><img alt="VWEA" src="img/vwea.png" class="img-fluid rounded b-shadow-a" style="width: 40%;"></a> 
+                  <a href="https://engineering.virginia.edu/uva-team-wins-environmental-design-competition-qualifies-national-event" aria-label="WEF VWEA Competition"><img alt="WEF" src="img/wef.png" class="img-fluid rounded b-shadow-a" style="width: 90%;"></a> 
                 </div>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-4">
+                <div class="about-img">
+                  <a href="https://engineering.virginia.edu/uva-team-wins-environmental-design-competition-qualifies-national-event" aria-label="WEF VWEA Competition"><img alt="VWEA" src="img/vwea.png" class="img-fluid rounded b-shadow-a" style="width: 90%;"></a> 
+                </div>
+              </div>
+              <div class="col-md-1">
                 <!-- Add Text in the Middle -->
               </div>
               <!-- Year and Title -->
               <div class="col-md-6 my-justify-right">
-
-                <!-- Title -->
-                <div class="card-body">
-                  <div class="card-category-box-right">
-                    <div class="card-category2">
-                      <h6 class="category">VWEA & WEF ENVIRONMENTAL DESIGN COMPETITIONS</h6>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Year -->
-                <div class="card-body">
-                  <div class="card-category-box-right">
-                    <div class="card-category">
-                      <h6 class="category">Fall 2019 - Fall 2020</h6>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Place -->
-                <div class="card-body">
-                  <div class="card-category-box-right">
-                    <div class="card-category3">
-                      <h6 class="category">Placed 1st in Virginia</h6>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Place -->
-                <div class="card-body">
-                  <div class="card-category-box-right">
-                    <div class="card-category3">
-                      <h6 class="category">Placed 4th Nationally</h6>
-                    </div>
-                  </div>
-                </div>
                 
               </div>
             </div>
+
+            <div class="row">
+              <!-- Title -->
+              <div class="card-body">
+                <div class="card-category-box-left">
+                  <div class="card-category2">
+                    <h6 class="category">VWEA & WEF ENVIRONMENTAL DESIGN COMPETITIONS</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <!-- Year -->
+              <div class="card-body">
+                <div class="card-category-box-left">
+                  <div class="card-category">
+                    <h6 class="category">Fall 2019 - Fall 2020</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <!-- Place -->
+              <div class="card-body">
+                <div class="card-category-box-left">
+                  <div class="card-category3">
+                    <h6 class="category">Placed 1st in Virginia</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <!-- Place -->
+              <div class="card-body">
+                <div class="card-category-box-left">
+                  <div class="card-category3">
+                    <h6 class="category">Placed 4th Nationally</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+
 
             <!-- Images -->
             <div class="row">
@@ -659,8 +913,30 @@
 
             <br>
 
+            <!-- Learn More Button -->
+            <div class="row list-ico">
+              <div class="col-md-12">
+                <button class="button" id="thornton-learn-more-btn" style="text-align: center;" onclick="revealLearnMoreInfo('thornton-hidden-div','thornton-learn-more-btn')">
+                  Learn More &nbsp<span class="ion-chevron-down"></span>
+                </button>
+              </div>
+            </div>
+
             <!-- Description -->
-            <div class="row" style="margin-left: 5%;">
+            <div class="row hidden" id="thornton-hidden-div" style="margin-left: 2%; margin-right: 2%;">
+              <p> <b>Abstract</b></p>
+              <p align="justify">At the University of Virginia’s School of Engineering, 
+                Thornton Courtyard is a small area with vegetation and wildlife. 
+                There are five drains in this area that release stormwater
+                 directly into local watersheds, such as the Rivanna River and 
+                 the Chesapeake Bay. The current drainage design causes these waterways
+                  to be impaired by the unfiltered stormwater. The goal of this project
+                   is to improve the drainage system at this specific site and demonstrate
+                    how it contributes to larger regional drainage concerns in Charlottesville.
+                     This will highlight the importance of addressing these issues to protect 
+                     the environment and local waterways.</p>
+
+              <p> <b>Accomplishments Summary</b></p>
 
               <ul class="list-ico">
                 <li><span class="ion-chevron-right"></span>
@@ -691,11 +967,11 @@
 
 
   <!--  --------------- Publications ------------------ -->
-  <section id="publications" class="about-mf sect-pt4 route">
+  <section id="publications" class="about-mf sect-pt1 route">
     <div class="container">
       <div class="col-sm-12">
         <div class="title-box text-center">
-          <h3 class="title-a">
+          <h3 class="title-b">
             Publications
           </h3>
           <p class="subtitle-a">
@@ -706,7 +982,7 @@
       </div>
 
       <div class="row">
-        <div class="col-sm-12">
+        <div class="offset-sm-1 col-sm-10">
           <div class="box-shadow-full">
             <div class="row">
 
@@ -849,11 +1125,11 @@
   </section>
 
     <!--  --------------- Teaching ------------------ -->
-    <section id="teaching" class="about-mf sect-pt4 route">
+    <section id="teaching" class="about-mf sect-pt1 route">
       <div class="container">
         <div class="col-sm-12">
           <div class="title-box text-center">
-            <h3 class="title-a">
+            <h3 class="title-b">
               Teaching
             </h3>
             <p class="subtitle-a">
@@ -863,7 +1139,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-12">
+          <div class="offset-sm-1 col-sm-10">
             <div class="box-shadow-full">
   
               <div class="row">
@@ -958,11 +1234,11 @@
     <!-- End News ----------------------------------- -->
 
   <!--  --------------- News ------------------ -->
-  <section id="news" class="about-mf sect-pt4 route">
+  <section id="news" class="about-mf sect-pt1 route">
     <div class="container">
       <div class="col-sm-12">
         <div class="title-box text-center">
-          <h3 class="title-a">
+          <h3 class="title-b">
             News
           </h3>
           <p class="subtitle-a">
@@ -972,7 +1248,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-12">
+        <div class="offset-sm-1 col-sm-10">
           <div class="box-shadow-full">
 
             <!-- Year -->
@@ -1083,6 +1359,9 @@
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
+  <!-- Learn More Button Javascript File -->
+  <script src="js/learnMore.js"></script>
+
 
 </body>
 </html>
