@@ -1037,6 +1037,15 @@ a:hover {
   border-radius: 4px;
 }
 
+.card-category4 {
+  display: inline-block;
+  color: #fff;
+  padding: 0 15px 5px;
+  overflow: hidden;
+  background-color: orange;
+  border-radius: 4px;
+}
+
 .card-blog .card-category .category {
   color: #fff;
   display: inline-block;

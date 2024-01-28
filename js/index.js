@@ -107,18 +107,35 @@ group.position.z +=100
 group.position.x +=50
 
 // Render function
-function render(a) {
-    // Rotate Object at each step
-    group.rotation.y += 0.002;
+// function render(a) {
+//     // Rotate Object at each step
+//     group.rotation.y += 0.002;
     
-    paths.forEach(path => {
-      if (path.vertices.length < 10000) {
-        path.update();
-      }
-    });
+//     paths.forEach(path => {
+//       if (path.vertices.length < 10000) {
+//         path.update();
+//       }
+//     });
   
-    renderer.render(scene, camera);
-  }
+//     renderer.render(scene, camera);
+//   }
+let lastRenderTime = Date.now();
+function render() {
+    requestAnimationFrame(render);
+    const now = Date.now();
+    const delta = now - lastRenderTime;
+    
+    if (delta > 50) {
+        group.rotation.y += 0.002;
+        paths.forEach(path => {
+            if (path.vertices.length < 10000) {
+                path.update();
+            }
+        });
+        renderer.render(scene, camera);
+        lastRenderTime = now;
+    }
+}
 
 // // Resize Window Event Listener
 window.addEventListener('resize', onResize)
