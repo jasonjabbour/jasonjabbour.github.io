@@ -805,22 +805,60 @@ a:hover {
 }
 
 @media (max-width: 767px) {
+  /* The legacy display:table centering grows to fit its content's min-width,
+     which pushed the intro content off-screen. Swap it for flex centering so
+     every width is hard-locked to the viewport. */
+  .intro .intro-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .intro .table-cell {
+    display: block;
+    width: 100%;
+  }
+
+  /* Stack: profile picture on top, text below — all centered */
   .intro .container {
+    display: flex;
     flex-direction: column;
-    text-align: center;
-    gap: 1.5rem;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
     transform: none;
+    max-width: 100%;
+  }
+  .intro .profile-picture {
+    height: 120px;
   }
   .intro-text {
     align-items: center;
-    width: auto;
+    width: 100%;
+    min-width: 0;
+  }
+  .intro-text .intro-title,
+  .intro-text .intro-subtitle {
+    text-align: center;
   }
   .intro-text .intro-subtitle {
     white-space: normal;
   }
-  .socials-pills ul {
+  /* Socials: centered row of icon-only pills.
+     Higher specificity (.socials.socials-pills / .socials-pills .social-pill)
+     so these beat the later non-media social-pill rules. */
+  .socials.socials-pills ul {
     flex-wrap: wrap;
     justify-content: center;
+  }
+  .socials-pills .social-pill {
+    padding: .55rem;
+  }
+  .socials-pills .social-pill span {
+    display: none;
+  }
+  .socials-pills .social-pill i {
+    font-size: 1.2rem;
   }
 }
 
@@ -1122,7 +1160,7 @@ footer .socials-pills ul {
 .project-card__brand > span {
   display: inline-block;
   padding: .4rem 1.1rem;
-  font-size: 1.05rem;
+  font-size: .84rem;
   font-weight: 700;
   letter-spacing: -.005em;
   color: #ffffff;
@@ -1530,8 +1568,17 @@ footer .socials-pills ul {
   .project-card__gallery {
     grid-template-columns: 1fr;
   }
+  /* On mobile, ignore the per-logo inline vw sizing and use a consistent
+     compact size for every card logo. */
   .project-card__logo img {
-    max-height: 110px;
+    max-height: 45px !important;
+  }
+  /* Per-logo tweaks: FieldAI smaller, Cornell larger */
+  .project-card__logo img[src*="fieldai"] {
+    max-height: 22px !important;
+  }
+  .project-card__logo img[src*="cornellogo"] {
+    max-height: 56px !important;
   }
 }
 
@@ -2298,6 +2345,7 @@ footer .socials-pills ul {
   letter-spacing: .04em;
   margin-bottom: 0;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 
@@ -2309,6 +2357,7 @@ footer .socials-pills ul {
   letter-spacing: .04em;
   margin-bottom: 0;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .card-blog .card-title {
