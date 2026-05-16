@@ -323,13 +323,19 @@ a:hover {
   margin-bottom: 2.5rem;
   z-index: 2;
   border-radius: 20px;
-  overflow: hidden;
   border: 1px solid rgba(0, 120, 255, 0.10);
   box-shadow:
     0 1px 2px rgba(15, 23, 42, 0.04),
     0 8px 24px -6px rgba(0, 120, 255, 0.12),
     0 24px 56px -16px rgba(0, 120, 255, 0.14);
   transition: box-shadow 400ms ease, border-color 400ms ease;
+}
+
+/* Only the project/research cards need overflow:hidden so their panel
+   strip is clipped by the rounded corners. The news/publications/teaching
+   wrappers must stay overflow:visible so position:sticky still works. */
+.project-card {
+  overflow: hidden;
 }
 
 .box-shadow-full:hover {
@@ -1108,13 +1114,32 @@ footer .socials-pills ul {
 }
 
 .project-card__brand {
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: #0f172a;
   margin: 0 0 .25rem 0;
-  letter-spacing: -.015em;
-  flex-basis: 100%;
-  text-align: center;
+  align-self: flex-start;
+  text-align: left;
+}
+
+.project-card__brand > span {
+  display: inline-block;
+  padding: .4rem 1.1rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -.005em;
+  color: #ffffff;
+  background-image: linear-gradient(135deg, #0078ff 0%, #00c2ff 100%);
+  border-radius: 999px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    0 6px 18px -6px rgba(0, 120, 255, 0.55);
+  line-height: 1.25;
+}
+
+/* Teal/cyan variant — matches QueueClass's original brand color */
+.project-card__brand--teal > span {
+  background-image: linear-gradient(135deg, #0a8a9c 0%, #086375 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    0 6px 18px -6px rgba(8, 99, 117, 0.55);
 }
 
 .project-card__meta .card-category h6,
@@ -1158,6 +1183,252 @@ footer .socials-pills ul {
 
 .project-card__actions {
   text-align: center;
+}
+
+/* ===========================================================
+   FieldAI / GLUESTICK video gallery with task toggle
+   =========================================================== */
+.video-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.video-toggle {
+  display: inline-flex;
+  align-self: flex-end;
+  gap: 4px;
+  padding: 4px;
+  background: rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 999px;
+}
+
+.video-toggle__btn {
+  appearance: none;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: #1e293b;
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  padding: .45rem 1.1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background 200ms ease, color 200ms ease, box-shadow 200ms ease;
+}
+
+.video-toggle__btn:focus {
+  outline: none;
+}
+
+.video-toggle__btn:focus-visible {
+  outline: 2px solid rgba(0, 120, 255, 0.6);
+  outline-offset: 2px;
+}
+
+.video-toggle__btn:hover {
+  color: #0078ff;
+}
+
+.video-toggle__btn[aria-selected="true"] {
+  background: #0078ff;
+  color: #ffffff;
+  box-shadow: 0 6px 16px -6px rgba(0, 120, 255, 0.5);
+}
+
+/* Subtle horizontal "tug" on the active button toward the OTHER option,
+   hinting that you can slide the selection. */
+@keyframes toggle-nudge-right {
+  0%, 60%, 100% { transform: translateX(0); }
+  75% { transform: translateX(5px); }
+  90% { transform: translateX(0); }
+}
+
+@keyframes toggle-nudge-left {
+  0%, 60%, 100% { transform: translateX(0); }
+  75% { transform: translateX(-5px); }
+  90% { transform: translateX(0); }
+}
+
+.video-toggle__btn[aria-selected="true"]:nth-child(1) {
+  animation: toggle-nudge-right 3.2s ease-in-out infinite;
+}
+
+.video-toggle__btn[aria-selected="true"]:nth-child(2) {
+  animation: toggle-nudge-left 3.2s ease-in-out infinite;
+}
+
+.video-toggle:hover .video-toggle__btn[aria-selected="true"],
+.video-toggle.is-dragging .video-toggle__btn[aria-selected="true"] {
+  animation-play-state: paused;
+}
+
+.video-toggle.is-dragging {
+  cursor: grabbing;
+}
+
+.video-toggle.is-dragging .video-toggle__btn[aria-selected="true"] {
+  transition: none;
+}
+
+.video-toggle__btn[aria-selected="true"] {
+  cursor: grab;
+  touch-action: pan-y;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .video-toggle__btn[aria-selected="true"]:nth-child(1),
+  .video-toggle__btn[aria-selected="true"]:nth-child(2) {
+    animation: none;
+  }
+}
+
+.video-row {
+  display: none;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.video-row.is-active {
+  display: flex;
+}
+
+/* A single image sitting directly in a row (e.g. PhotonDrive image tab) */
+.video-row > img {
+  align-self: center;
+  max-width: 100%;
+  height: auto;
+  border-radius: 14px;
+}
+
+/* Responsive 16:9 YouTube embed */
+.video-embed {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 28px -12px rgba(15, 23, 42, 0.35);
+}
+
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.video-card {
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+
+.video-card video {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  display: block;
+  background: #000;
+  box-shadow: 0 8px 24px -10px rgba(15, 23, 42, 0.25);
+}
+
+.video-card.unsafe video {
+  box-shadow: 0 8px 24px -10px rgba(147, 51, 234, 0.35);
+}
+
+.video-card.safe video {
+  box-shadow: 0 8px 24px -10px rgba(245, 158, 11, 0.35);
+}
+
+.label-below {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .35rem;
+  font-size: .82rem;
+  color: #4e4e4e;
+  flex-wrap: wrap;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.label-icon {
+  width: 1em;
+  height: auto;
+  vertical-align: -0.2em;
+  flex-shrink: 0;
+}
+
+.method-name {
+  font-weight: 700;
+  letter-spacing: .03em;
+}
+
+.pruned-text { color: #7c3aed; }
+.gluestick-text { color: #d97706; }
+.unsafe-text { color: #000000; font-weight: 300; }
+.safe-text { color: #000000; font-weight: 300; }
+
+.task-instruction-gradient {
+  margin: .5rem auto .5rem auto;
+  padding: 0.35rem 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #000;
+  border-radius: 6px;
+  width: fit-content;
+  max-width: 85%;
+  background: linear-gradient(
+    90deg,
+    rgba(127, 99, 177, 0.55) 0%,
+    rgba(220, 90, 47, 0.55) 100%
+  );
+  box-shadow:
+    0 0 .5em rgba(127, 99, 177, 0.25),
+    0 0 .5em rgba(220, 90, 47, 0.25);
+  font-family: 'Noto Sans', sans-serif;
+  line-height: 1.3;
+  letter-spacing: 0.25px;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  transition: all 0.25s ease;
+}
+
+.task-instruction-gradient strong {
+  font-weight: 700;
+  color: #000;
+  margin-right: .25rem;
+}
+
+.task-instruction-gradient:hover {
+  box-shadow:
+    0 0 1em rgba(127, 99, 177, 0.35),
+    0 0 1em rgba(220, 90, 47, 0.35);
+  transform: scale(1.01);
+}
+
+@media (max-width: 600px) {
+  .video-pair {
+    grid-template-columns: 1fr;
+  }
+  .video-toggle__btn {
+    font-size: .75rem;
+    padding: .4rem .9rem;
+  }
 }
 
 .project-card__details {
@@ -1204,6 +1475,41 @@ footer .socials-pills ul {
 
 .project-card__details .list-ico span {
   color: rgba(255, 255, 255, 0.55);
+}
+
+/* Pill-style link inside a details panel */
+.project-card__details a.detail-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .42rem 1rem;
+  font-size: .85rem;
+  font-weight: 600;
+  color: #7cc4ff;
+  background: rgba(0, 120, 255, 0.12);
+  border: 1px solid rgba(0, 120, 255, 0.4);
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background 200ms ease, border-color 200ms ease, color 200ms ease, transform 200ms ease;
+}
+
+.project-card__details a.detail-link:hover {
+  background: rgba(0, 120, 255, 0.22);
+  border-color: rgba(0, 120, 255, 0.65);
+  color: #b3dcff;
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+.detail-link__text {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.detail-link__icon {
+  font-size: .95rem;
+  line-height: 1;
 }
 
 /* Override the global .hidden { display: none } — closed state shows just a
@@ -1354,6 +1660,114 @@ footer .socials-pills ul {
 .pub-badge span {
   color: #d97706;
   font-size: .95rem;
+}
+
+/* ---- Presentation card variant ---- */
+.pub-card--presentation .pub-card__title {
+  padding-right: 8.5rem;   /* leave room for the top-right location/year badge */
+}
+
+/* Top-right corner: location pin on top, year underneath */
+.pub-card__corner {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: .15rem;
+  text-align: right;
+}
+
+.pub-card__location {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  font-size: .78rem;
+  font-weight: 500;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+.pub-card__location span {
+  color: #0078ff;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.pub-card__year {
+  font-size: .82rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* Presentation type — uppercase kicker above the title */
+.pub-card__type {
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #64748b;
+  margin: 0 0 .4rem 0;
+}
+
+/* Metadata pill row */
+.pub-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin-bottom: .85rem;
+}
+
+.pub-tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  color: #1e293b;
+  background: rgba(15, 23, 42, 0.05);
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  border-radius: 999px;
+  padding: .32rem .85rem;
+  line-height: 1.3;
+}
+
+/* Blue company/venue pill */
+.pub-tag--blue {
+  color: #ffffff;
+  background: linear-gradient(135deg, #2495ff 0%, #0078ff 100%);
+  border-color: transparent;
+  box-shadow: 0 4px 12px -5px rgba(0, 120, 255, 0.55);
+}
+
+/* "Unreleased" placeholder shown when no slides/poster file exists */
+.pub-btn--unreleased {
+  color: #94a3b8;
+  background: rgba(15, 23, 42, 0.03);
+  border: 1px dashed rgba(15, 23, 42, 0.28);
+  cursor: default;
+  text-transform: uppercase;
+}
+
+.pub-btn--unreleased:hover {
+  color: #94a3b8;
+  background: rgba(15, 23, 42, 0.03);
+  border-color: rgba(15, 23, 42, 0.28);
+  transform: none;
+}
+
+@media (max-width: 600px) {
+  .pub-card--presentation .pub-card__title {
+    padding-right: 0;
+  }
+  .pub-card__corner {
+    position: static;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: .6rem;
+    margin-bottom: .5rem;
+  }
 }
 
 /* ===========================================================
@@ -1545,6 +1959,18 @@ footer .socials-pills ul {
   box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.35);
   z-index: 5;
   position: relative;
+}
+
+/* Opt-out: add class="no-hover" to any image to suppress the hover effect */
+.project-card__gallery img.no-hover:hover,
+.project-card__gallery a:hover img.no-hover,
+.about-mf .box-shadow-full img.no-hover:hover,
+.about-mf .box-shadow-full a:hover img.no-hover,
+#projects .box-shadow-full img.no-hover:hover,
+#projects .box-shadow-full a:hover img.no-hover {
+  transform: none !important;
+  box-shadow: none !important;
+  z-index: auto !important;
 }
 
 /* Restore left alignment + spacing inside the "Learn More" detail panel */
@@ -1808,7 +2234,7 @@ footer .socials-pills ul {
 .card-category {
   display: inline-block;
   color: #fff;
-  padding: 3px 11px 4px;
+  padding: 0px 11px 4px;
   overflow: hidden;
   background-image: linear-gradient(135deg, #2495ff 0%, #0078ff 50%, #005fcc 100%);
   border-radius: 999px;
@@ -1821,7 +2247,7 @@ footer .socials-pills ul {
 .card-category2 {
   display: inline-block;
   color: #fff;
-  padding: 3px 11px 4px;
+  padding: 0px 11px 4px;
   overflow: hidden;
   background-image: linear-gradient(135deg, #3a3a3a 0%, #1e1e1e 50%, #0f0f10 100%);
   border-radius: 999px;
@@ -1834,7 +2260,7 @@ footer .socials-pills ul {
 .card-category3 {
   display: inline-block;
   color: #fff;
-  padding: 3px 11px 4px;
+  padding: 0px 11px 4px;
   overflow: hidden;
   background-image: linear-gradient(135deg, #22c55e 0%, #16a34a 50%, #15803d 100%);
   border-radius: 999px;
@@ -1847,7 +2273,7 @@ footer .socials-pills ul {
 .card-category4 {
   display: inline-block;
   color: #fff;
-  padding: 3px 11px 4px;
+  padding: 0px 11px 4px;
   overflow: hidden;
   background-image: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
   border-radius: 999px;

@@ -214,7 +214,7 @@
           <div class="box-shadow-full project-card">
             <div class="project-card__head">
               <div class="project-card__logo">
-                <a href="https://www.fieldai.com/" aria-label="FieldAI"><img alt="Harvard Edge Computing Lab" src="img/fieldai_logo.png"></a>
+                <a href="https://www.fieldai.com/" aria-label="FieldAI"><img alt="FieldAI" src="img/fieldai_logo.png" style="max-height: 2.5vw;"></a>
               </div>
               <div class="project-card__meta">
                 <div class="card-category2"><h6 class="category">Physical AI Research</h6></div>
@@ -222,8 +222,67 @@
               </div>
             </div>
 
-            <div class="project-card__gallery project-card__gallery--single">
-                <img alt="GLUESTICK" src="img/gluestick_spotlight.png" class="img-fluid rounded">
+            <div class="video-gallery" data-active="navigation">
+
+              <div class="video-toggle" role="tablist" aria-label="Task selector">
+                <button type="button" class="video-toggle__btn" data-task="navigation" aria-selected="true">Navigation</button>
+                <button type="button" class="video-toggle__btn" data-task="manipulation" aria-selected="false">Manipulation</button>
+              </div>
+
+              <!-- Navigation Row -->
+              <div class="video-row" data-task="navigation">
+                <div class="video-pair">
+                  <div class="video-card unsafe">
+                    <video autoplay muted loop playsinline preload="metadata">
+                      <source src="img/navigation_pruned.mp4" type="video/mp4">
+                    </video>
+                    <div class="label-below">
+                      <img src="img/purple_scissors.png" class="label-icon" alt="Pruned Icon">
+                      <span class="method-name pruned-text">PRUNED</span> &mdash; <span class="status unsafe-text">Unsafe &amp; Failed</span>
+                    </div>
+                  </div>
+                  <div class="video-card safe">
+                    <video autoplay muted loop playsinline preload="metadata">
+                      <source src="img/navigation_gluestick.mp4" type="video/mp4">
+                    </video>
+                    <div class="label-below">
+                      <img src="img/orange_gluestick.png" class="label-icon" alt="GLUESTICK Icon">
+                      <span class="method-name gluestick-text">GLUESTICK</span> &mdash; <span class="status safe-text">Safe &amp; Successful</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="task-instruction-gradient">
+                  <strong>Task Instruction:</strong> &ldquo;Enter the dining room and walk to the other end&rdquo;
+                </div>
+              </div>
+
+              <!-- Manipulation Row -->
+              <div class="video-row" data-task="manipulation">
+                <div class="video-pair">
+                  <div class="video-card unsafe">
+                    <video autoplay muted loop playsinline preload="metadata">
+                      <source src="img/manipulation_pruned.mp4" type="video/mp4">
+                    </video>
+                    <div class="label-below">
+                      <img src="img/purple_scissors.png" class="label-icon" alt="Pruned Icon">
+                      <span class="method-name pruned-text">PRUNED</span> &mdash; <span>Unsafe &amp; Failed</span>
+                    </div>
+                  </div>
+                  <div class="video-card safe">
+                    <video autoplay muted loop playsinline preload="metadata">
+                      <source src="img/manipulation_gluestick.mp4" type="video/mp4">
+                    </video>
+                    <div class="label-below">
+                      <img src="img/orange_gluestick.png" class="label-icon" alt="GLUESTICK Icon">
+                      <span class="method-name gluestick-text">GLUESTICK</span> &mdash; <span>Safe &amp; Successful</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="task-instruction-gradient">
+                  <strong>Task Instruction:</strong> &ldquo;Put the Bowl on top of the cabinet&rdquo;
+                </div>
+              </div>
+
             </div>
 
             <div class="project-card__actions">
@@ -245,7 +304,7 @@
                   Across diverse VLA architectures and tasks in manipulation and navigation, GLUESTICK achieves competitive memory efficiency 
                   while substantially recovering success rates and reducing safety violations.
 
-                  Please visit <b> <a style="color: #0078ff;" href="https://gluestick-vla.github.io/" aria-label="RobotPerf.com">GLUESTICK.com</a> </b>
+                  Please visit <b> <a style="color: #0078ff;" href="https://gluestick-vla.github.io/" aria-label="GLUESTICK.com">GLUESTICK.com</a> </b>
                  for more information.</p>
 
             </div>
@@ -277,7 +336,7 @@
 
             <div class="project-card__gallery project-card__gallery--single">
               <a href="https://accelerationrobotics.com/robotperf.php">
-                <img alt="RobotPerf Overview" src="img/robotperf-diagram-ros2.png" class="img-fluid rounded">
+                <img alt="RobotPerf Overview" src="img/robotperf-diagram-ros2.png" class="img-fluid rounded no-hover">
               </a>
             </div>
 
@@ -404,7 +463,7 @@
                 <a href="https://www.jhuapl.edu/" aria-label="Johns Hopkins University Applied Physics Lab JHU APL"><img alt="Johns Hopkins University Applied Physics Lab" src="img/jhuapl_logo.png"></a>
               </div>
               <div class="project-card__meta">
-                <div class="card-category2"><h6 class="category">Machine Learning Security Engineer Intern</h6></div>
+                <div class="card-category2"><h6 class="category">Machine Learning &amp Security Research</h6></div>
                 <div class="card-category"><h6 class="category">Summer 2022</h6></div>
               </div>
             </div>
@@ -471,7 +530,7 @@
           <div class="box-shadow-full project-card">
             <div class="project-card__head">
               <div class="project-card__logo">
-                <a href="https://math.cornell.edu/history-reu-and-spur-summer-program-undergraduate-research-programs" aria-label="Cornell Mathematics Department Summer Research Program"><img alt="Cornell University Logo" src="img/cornellogo.png"></a>
+                <a href="https://math.cornell.edu/history-reu-and-spur-summer-program-undergraduate-research-programs" aria-label="Cornell Mathematics Department Summer Research Program"><img alt="Cornell University Logo" src="img/cornellogo.png" style="max-height: 5vw;"></a>
               </div>
               <div class="project-card__meta">
                 <div class="card-category2"><h6 class="category">Mathematics Research (SPUR)</h6></div>
@@ -548,10 +607,10 @@
           <div class="box-shadow-full project-card">
             <div class="project-card__head">
               <div class="project-card__logo">
-                <a href="https://www.cs.virginia.edu/~yg9ca/alzheimers/index.html" aria-label="UVA Alzheimers Page"><img alt="University of Virginia (UVA) Logo" src="img/uvalogo.png"></a>
+                <a href="https://www.cs.virginia.edu/~yg9ca/alzheimers/index.html" aria-label="UVA Alzheimers Page"><img alt="University of Virginia (UVA) Logo" src="img/uvalogo.png" style="max-height: 3vw;"></a>
               </div>
               <div class="project-card__meta">
-                <div class="card-category2"><h6 class="category">Smart healthcare Research</h6></div>
+                <div class="card-category2"><h6 class="category">Medical AI Research</h6></div>
                 <div class="card-category"><h6 class="category">Fall 2019 - Spring 2022</h6></div>
               </div>
             </div>
@@ -643,11 +702,11 @@
           -->
           <div class="box-shadow-full project-card">
             <div class="project-card__head">
+              <p class="project-card__brand"><span>PlannerGAN</span></p>
               <div class="project-card__logo">
-                <img alt="MIT Logo" src="img/mitlogo.png">
+                <img alt="MIT Logo" src="img/mitlogo.png" style="max-height: 3.5vw;">
               </div>
               <div class="project-card__meta">
-                <p class="project-card__brand">PlannerGAN</p>
                 <div class="card-category2"><h6 class="category">MIT 6.4212 Robotic Manipulation</h6></div>
                 <div class="card-category"><h6 class="category">Fall 2023</h6></div>
               </div>
@@ -685,18 +744,33 @@
           -->
           <div class="box-shadow-full project-card" id="photondrive">
             <div class="project-card__head">
+              <p class="project-card__brand"><span>PhotonDrive</span></p>
               <div class="project-card__logo">
                 <a href="https://edge.seas.harvard.edu/" aria-label="Harvard Edge Computing Lab"><img alt="Harvard Edge Computing Lab" src="img/harvard_edge_main.png"></a>
               </div>
               <div class="project-card__meta">
-                <p class="project-card__brand">PhotonDrive</p>
-                <div class="card-category2"><h6 class="category">Coming soon!</h6></div>
-                <div class="card-category"><h6 class="category">Summer 2023 - Present</h6></div>
+                <div class="card-category2"><h6 class="category">IARPA, Lightmatter, Harvard, & Boston University</h6></div>
+                <div class="card-category"><h6 class="category">2023-2024</h6></div>
               </div>
             </div>
 
-            <div class="project-card__gallery project-card__gallery--single">
-              <img alt="PhotonDrive" src="img/photondrive.jpg" class="img-fluid rounded" style="max-width: 70%;">
+            <div class="video-gallery" data-active="av">
+
+              <div class="video-toggle" role="tablist" aria-label="Media selector">
+                <button type="button" class="video-toggle__btn" data-task="av" aria-selected="true">AV</button>
+                <button type="button" class="video-toggle__btn" data-task="video" aria-selected="false">Video</button>
+              </div>
+
+              <div class="video-row" data-task="av">
+                <img alt="PhotonDrive" src="img/photondrive2.jpg" class="img-fluid rounded" style="max-width: 70%;">
+              </div>
+
+              <div class="video-row" data-task="video">
+                <div class="video-embed">
+                  <iframe data-src="https://www.youtube.com/embed/gqvk7Pg8Btk?si=h5b_Ae4gFRrSZPPe" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+              </div>
+
             </div>
 
             <div class="project-card__actions">
@@ -706,7 +780,8 @@
             </div>
 
             <div class="hidden project-card__details" id="photondrive-hidden-div">
-              <p> <b>Description: </b> Coming soon!</p>
+              <p> <b>Description: </b> Collaboration between IARPA, Lightmatter, Harvard University, and Boston University on photonic computing to accelerate AI workloads in autonomous vehicles.</p>
+              <p><a class="detail-link" href="https://www.businesswire.com/news/home/20220208005509/en/Lightmatter-Harvard-and-Boston-University-Collaborate-to-Create-Electro-Photonic-Systems-for-Autonomous-Vehicles-Under-New-%244.8M-IARPA-Project" target="_blank" rel="noopener" aria-label="Lightmatter, Harvard, and Boston University IARPA Project Announcement"><span class="detail-link__icon ion-link"></span><span class="detail-link__text">Business Wire article</span></a></p>
             </div>
           </div>
 
@@ -727,11 +802,11 @@
           -->
           <div class="box-shadow-full project-card">
             <div class="project-card__head">
+              <p class="project-card__brand"><span>QueueClass.com</span></p>
               <div class="project-card__logo">
                 <a href="https://queueclass.com/" aria-label="QueueClass Website"><img alt="QueueClass Logo" src="img/queuelogo.png"></a>
               </div>
               <div class="project-card__meta">
-                <p class="project-card__brand" style="color: #086375;">QueueClass.com</p>
                 <div class="card-category2"><h6 class="category">Founder and Full Stack Developer</h6></div>
                 <div class="card-category"><h6 class="category">Fall 2021 - Spring 2022</h6></div>
               </div>
@@ -793,11 +868,12 @@
           -->
           <div class="box-shadow-full project-card">
             <div class="project-card__head">
+              <p class="project-card__brand"><span>Murder Hornet Classification</span></p>
               <div class="project-card__logo">
                 <a href="https://datascience.virginia.edu/" aria-label="UVA Datascience"><img alt="University of Virginia School of Datascience" src="img/datascience.jpg"></a>
               </div>
               <div class="project-card__meta">
-                <div class="card-category2"><h6 class="category">MURDER HORNET CLASSIFICATION</h6></div>
+                <div class="card-category2"><h6 class="category">Machine Learning</h6></div>
                 <div class="card-category"><h6 class="category">January 2021</h6></div>
               </div>
             </div>
@@ -839,8 +915,8 @@
           <div class="box-shadow-full project-card">
             <div class="project-card__head">
               <div class="project-card__logo project-card__logo--dual">
-                <a href="https://engineering.virginia.edu/uva-team-wins-environmental-design-competition-qualifies-national-event" aria-label="WEF VWEA Competition"><img alt="WEF" src="img/wef.png"></a>
-                <a href="https://engineering.virginia.edu/uva-team-wins-environmental-design-competition-qualifies-national-event" aria-label="WEF VWEA Competition"><img alt="VWEA" src="img/vwea.png"></a>
+                <a href="https://engineering.virginia.edu/uva-team-wins-environmental-design-competition-qualifies-national-event" aria-label="WEF VWEA Competition"><img alt="WEF" src="img/wef.png" style="max-height: 3vw;"></a>
+                <a href="https://engineering.virginia.edu/uva-team-wins-environmental-design-competition-qualifies-national-event" aria-label="WEF VWEA Competition"><img alt="VWEA" src="img/vwea.png" style="max-height: 3vw;"></a>
               </div>
               <div class="project-card__meta">
                 <div class="card-category2"><h6 class="category">VWEA &amp; WEF ENVIRONMENTAL DESIGN COMPETITIONS</h6></div>
@@ -932,6 +1008,51 @@
                 </div>
 
                 <div class="pub-list">
+                  <div class="pub-card">
+                    <h4 class="pub-card__title">Don&rsquo;t Run with Scissors: Pruning Breaks VLA Models but They Can Be Recovered</h4>
+                    <p class="pub-card__authors"><b>Jabbour, J.</b>, Kim, D.-K., Smith, M., Patrikar, J., Ghosal, R., Wang, Y., Agha, A., Janapa Reddi, V., &amp; Omidshafiei, S.</p>
+                    <div class="pub-card__venue">2025 &middot; (Submitted)</div>
+                    <div class="pub-card__actions">
+                      <a class="pub-btn" href="https://arxiv.org/pdf/2510.08464" aria-label="Don't Run with Scissors Paper" target="_blank" rel="noopener"><span class="ion-link"></span> Link</a>
+                    </div>
+                  </div>
+
+                  <div class="pub-card">
+                    <h4 class="pub-card__title">Multi-Agent Reinforcement Learning for Sample-Efficient Deep Neural Network Mapping</h4>
+                    <p class="pub-card__authors">Krishnan, S., <b>Jabbour, J.</b>, Zhang, D., Jaques, N., Faust, A., Omidshafiei, S., &amp; Janapa Reddi, V.</p>
+                    <div class="pub-card__venue">2025 &middot; (Submitted)</div>
+                    <div class="pub-card__actions">
+                      <a class="pub-btn" href="https://arxiv.org/pdf/2507.16249" aria-label="Multi-Agent Reinforcement Learning for DNN Mapping Paper" target="_blank" rel="noopener"><span class="ion-link"></span> Link</a>
+                    </div>
+                  </div>
+
+                  <div class="pub-card">
+                    <h4 class="pub-card__title">Generative AI in Embodied Systems: System-Level Analysis of Performance, Efficiency and Scalability</h4>
+                    <p class="pub-card__authors">Wan, Z., Qian, J., Du, Y., <b>Jabbour, J.</b>, Du, Y., Zhao, Y., Raychowdhury, A., Krishna, T., &amp; Janapa Reddi, V.</p>
+                    <div class="pub-card__venue">IEEE International Symposium on Performance Analysis of Systems and Software (ISPASS) &middot; 2025</div>
+                    <div class="pub-card__actions">
+                      <a class="pub-btn" href="https://arxiv.org/pdf/2504.18945" aria-label="Generative AI in Embodied Systems Paper" target="_blank" rel="noopener"><span class="ion-link"></span> Link</a>
+                    </div>
+                  </div>
+
+                  <div class="pub-card">
+                    <h4 class="pub-card__title">ReCA: Integrated Acceleration for Real-Time and Efficient Cooperative Embodied Autonomous Agents</h4>
+                    <p class="pub-card__authors">Wan, Z., Du, Y., Ibrahim, M., Qian, J., <b>Jabbour, J.</b>, &hellip;, Raychowdhury, A., &amp; Janapa Reddi, V.</p>
+                    <div class="pub-card__venue">International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS) &middot; 2025</div>
+                    <div class="pub-card__actions">
+                      <a class="pub-btn" href="https://dl.acm.org/doi/pdf/10.1145/3676641.3716016" aria-label="ReCA Paper" target="_blank" rel="noopener"><span class="ion-link"></span> Link</a>
+                    </div>
+                  </div>
+
+                  <div class="pub-card">
+                    <h4 class="pub-card__title">Generative AI Agents in Autonomous Machines: A Safety Perspective</h4>
+                    <p class="pub-card__authors"><b>Jabbour, J.</b>, &amp; Janapa Reddi, V.</p>
+                    <div class="pub-card__venue">International Conference on Computer-Aided Design (ICCAD) &middot; 2024</div>
+                    <div class="pub-card__actions">
+                      <a class="pub-btn" href="https://dl.acm.org/doi/pdf/10.1145/3676536.3698390" aria-label="Generative AI Agents in Autonomous Machines Paper" target="_blank" rel="noopener"><span class="ion-link"></span> Link</a>
+                    </div>
+                  </div>
+
                   <div class="pub-card">
                     <h4 class="pub-card__title">RobotPerf: An Open-Source, Vendor-Agnostic, Benchmarking Suite for Evaluating Robotics Computing System Performance</h4>
                     <p class="pub-card__authors">Mayoral-Vilches, V., <b>Jabbour, J.</b>, Hsiao, Y-S., Wan, Z., Mart&iacute;nez Fari&ntilde;a, A., Crespo-&Aacute;lvarez, M., Stewart, M., Reina-Mu&ntilde;oz, J.M., Nagras, P., Vikhe, G., Bakhshalipour, M., Pinzger, M., Rass, S., Panigrahi, S., Corradi, G., Roy, N., Gibbons, P.B., Neuman, S.M., Plancher, B., &amp; Janapa Reddi, V.</p>
@@ -1027,6 +1148,21 @@
 
                 <div class="pub-list">
                   <div class="pub-card">
+                    <h4 class="pub-card__title">SocratiQ: A Generative AI-Powered Learning Companion for Personalized Education and Broader Accessibility</h4>
+                    <p class="pub-card__authors"><b>Jabbour, J.</b>, Kleinbard, K., Miller, O., Haussman, R., &amp; Janapa Reddi, V.</p>
+                    <div class="pub-card__venue">Workshop on Computer Architecture Education (WCAE) &middot; 2025</div>
+                    <div class="pub-card__actions">
+                      <a class="pub-btn" href="https://dl.acm.org/doi/pdf/10.1145/3743646.3750010" aria-label="SocratiQ Workshop Paper" target="_blank" rel="noopener"><span class="ion-link"></span> Link</a>
+                    </div>
+                  </div>
+
+                  <div class="pub-card">
+                    <h4 class="pub-card__title">Receding Diffusion: Domain Informed, Efficient Diffusion Path Planning for Dynamic Environments</h4>
+                    <p class="pub-card__authors"><b>Jabbour, J.</b>, Wang, J., Iyer, S., &amp; Plancher, B.</p>
+                    <div class="pub-card__venue">Northeast Robotics Colloquium (NERC) &middot; Amherst, MA &middot; 2024</div>
+                  </div>
+
+                  <div class="pub-card">
                     <h4 class="pub-card__title">RobotPerf: An Open-Source, Vendor-Agnostic, Benchmarking Suite for Evaluating Robotics Computing System Performance</h4>
                     <p class="pub-card__authors">Mayoral-Vilches, V., <b>Jabbour, J.</b>, Hsiao, Y-S., Wan, Z., Mart&iacute;nez Fari&ntilde;a, A., Crespo-&Aacute;lvarez, M., Stewart, M., Reina-Mu&ntilde;oz, J.M., Nagras, P., Vikhe, G., Bakhshalipour, M., Pinzger, M., Rass, S., Panigrahi, S., Corradi, G., Roy, N., Gibbons, P.B., Neuman, S.M., Plancher, B., &amp; Janapa Reddi, V.</p>
                     <div class="pub-card__venue">Methods for Objective Comparison of Results in Intelligent Robotics Research Workshop at IROS 2023 &middot; Detroit, MI</div>
@@ -1077,28 +1213,145 @@
                 </div>
 
                 <div class="pub-list">
-                  <div class="pub-card">
+                  <div class="pub-card pub-card--presentation">
+                    <div class="pub-card__corner">
+                      <div class="pub-card__location"><span class="ion-location"></span> Cambridge, MA</div>
+                      <div class="pub-card__year">2026</div>
+                    </div>
+                    <p class="pub-card__type">Invited Talk</p>
+                    <h4 class="pub-card__title">The Collapse of Constrained Physical AI</h4>
+                    <p class="pub-card__authors"><b>Jabbour, J.</b></p>
+                    <div class="pub-card__tags">
+                      <span class="pub-tag pub-tag--blue">Harvard University Systems Seminar</span>
+                    </div>
+                    <div class="pub-card__actions">
+                      <span class="pub-btn pub-btn--unreleased">Unreleased</span>
+                    </div>
+                  </div>
+
+                  <div class="pub-card pub-card--presentation">
+                    <div class="pub-card__corner">
+                      <div class="pub-card__location"><span class="ion-location"></span> Menlo Park, CA</div>
+                      <div class="pub-card__year">2025</div>
+                    </div>
+                    <p class="pub-card__type">Poster</p>
+                    <h4 class="pub-card__title">Don&rsquo;t Run with Scissors: Pruning Breaks VLA Models but They Can Be Recovered</h4>
+                    <p class="pub-card__authors"><b>Jabbour, J.</b></p>
+                    <div class="pub-card__tags">
+                      <span class="pub-tag pub-tag--blue">Meta 2025 PhD Forum</span>
+                    </div>
+                    <div class="pub-card__actions">
+                      <span class="pub-btn pub-btn--unreleased">Unreleased</span>
+                    </div>
+                  </div>
+
+                  <div class="pub-card pub-card--presentation">
+                    <div class="pub-card__corner">
+                      <div class="pub-card__location"><span class="ion-location"></span> Cambridge, MA</div>
+                      <div class="pub-card__year">2025</div>
+                    </div>
+                    <p class="pub-card__type">Internal Company-Wide Presentation</p>
+                    <h4 class="pub-card__title">Don&rsquo;t Run with Scissors: Pruning Breaks VLA Models but They Can Be Recovered</h4>
+                    <p class="pub-card__authors"><b>Jabbour, J.</b></p>
+                    <div class="pub-card__tags">
+                      <span class="pub-tag pub-tag--blue">FieldAI</span>
+                    </div>
+                    <div class="pub-card__actions">
+                      <span class="pub-btn pub-btn--unreleased">Unreleased</span>
+                    </div>
+                  </div>
+
+                  <div class="pub-card pub-card--presentation">
+                    <div class="pub-card__corner">
+                      <div class="pub-card__location"><span class="ion-location"></span> Cambridge, MA</div>
+                      <div class="pub-card__year">2025</div>
+                    </div>
+                    <p class="pub-card__type">Invited Talk</p>
+                    <h4 class="pub-card__title">SocratiQ: A Generative AI-Powered Learning Companion for Personalized Education</h4>
+                    <p class="pub-card__authors"><b>Jabbour, J.</b></p>
+                    <div class="pub-card__tags">
+                      <span class="pub-tag pub-tag--blue">Harvard&rsquo;s Learning Incubator (LInc) Faculty</span>
+                    </div>
+                    <div class="pub-card__actions">
+                      <span class="pub-btn pub-btn--unreleased">Unreleased</span>
+                    </div>
+                  </div>
+
+                  <div class="pub-card pub-card--presentation">
+                    <div class="pub-card__corner">
+                      <div class="pub-card__location"><span class="ion-location"></span> Cambridge, MA</div>
+                      <div class="pub-card__year">2025</div>
+                    </div>
+                    <p class="pub-card__type">Invited Talk</p>
+                    <h4 class="pub-card__title">Towards Safe Embodied AI through Domain-Informed Optimizations</h4>
+                    <p class="pub-card__authors"><b>Jabbour, J.</b></p>
+                    <div class="pub-card__tags">
+                      <span class="pub-tag pub-tag--blue">FieldAI FAIRI Group</span>
+                    </div>
+                    <div class="pub-card__actions">
+                      <span class="pub-btn pub-btn--unreleased">Unreleased</span>
+                    </div>
+                  </div>
+
+                  <div class="pub-card pub-card--presentation">
+                    <div class="pub-card__corner">
+                      <div class="pub-card__location"><span class="ion-location"></span> Southborough, MA</div>
+                      <div class="pub-card__year">2024</div>
+                    </div>
+                    <p class="pub-card__type">Demo</p>
+                    <h4 class="pub-card__title">Inside Harvard University&rsquo;s FIRST Autonomous Vehicle</h4>
+                    <p class="pub-card__authors"><b>Jabbour, J.</b>, Stewart, M., Hsiao, Y., &amp; Janapa Reddi, V.</p>
+                    <div class="pub-card__tags">
+                      <span class="pub-tag pub-tag--blue">IARPA</span>
+                    </div>
+                    <div class="pub-card__actions">
+                      <a class="pub-btn" href="https://youtu.be/gqvk7Pg8Btk?si=XgNIzLuIWXDcMkE6" aria-label="Inside Harvard's FIRST Autonomous Vehicle Video" target="_blank" rel="noopener"><span class="ion-play"></span> Video</a>
+                    </div>
+                  </div>
+
+                  <div class="pub-card pub-card--presentation">
+                    <div class="pub-card__corner">
+                      <div class="pub-card__location"><span class="ion-location"></span> Boston, MA</div>
+                      <div class="pub-card__year">2023</div>
+                    </div>
+                    <p class="pub-card__type">Unpublished Presentation</p>
                     <h4 class="pub-card__title">Beyond the Constraints: Unleashing the Potential of Low-Cost Robots and Standardizing Robotics Performance Assessment</h4>
                     <p class="pub-card__authors"><b>Jabbour, J.</b></p>
-                    <div class="pub-card__venue">Boston University Department of Computer Science &middot; Boston, MA &middot; 2023 &middot; [Unpublished presentation]</div>
+                    <div class="pub-card__tags">
+                      <span class="pub-tag pub-tag--blue">Boston University Department of Computer Science</span>
+                    </div>
                     <div class="pub-card__actions">
                       <a class="pub-btn" href="pubs/BU_CS599N1_Fall2023_ Beyond_the_Constraints.pdf" aria-label="BU Slides" target="_blank" rel="noopener"><span class="ion-document"></span> Slides</a>
                     </div>
                   </div>
 
-                  <div class="pub-card">
+                  <div class="pub-card pub-card--presentation">
+                    <div class="pub-card__corner">
+                      <div class="pub-card__location"><span class="ion-location"></span> Laurel, MD</div>
+                      <div class="pub-card__year">2022</div>
+                    </div>
+                    <p class="pub-card__type">Unpublished Presentation</p>
                     <h4 class="pub-card__title">Securing Network Traffic Data using Reinforcement Learning</h4>
                     <p class="pub-card__authors"><b>Jabbour, J.</b></p>
-                    <div class="pub-card__venue">Johns Hopkins University Applied Physics Laboratory, AOS QNI Group &middot; Laurel, MD &middot; 2022 &middot; [Unpublished presentation]</div>
+                    <div class="pub-card__tags">
+                      <span class="pub-tag pub-tag--blue">Johns Hopkins University Applied Physics Laboratory, AOS QNI Group</span>
+                    </div>
                     <div class="pub-card__actions">
                       <a class="pub-btn" href="pubs/JHUAPL_Jason Jabbour_2022_Summer_Presentation.pdf" aria-label="JHU APL Slides" target="_blank" rel="noopener"><span class="ion-document"></span> Slides</a>
                     </div>
                   </div>
 
-                  <div class="pub-card">
+                  <div class="pub-card pub-card--presentation">
+                    <div class="pub-card__corner">
+                      <div class="pub-card__location"><span class="ion-location"></span> Cambridge, MA</div>
+                      <div class="pub-card__year">2021</div>
+                    </div>
+                    <p class="pub-card__type">Unpublished Presentation</p>
                     <h4 class="pub-card__title">Taking Tiny Steps Towards Applying Reinforcement Learning to Achieve Walking Gaits on a Constrained Quadruped Robot</h4>
                     <p class="pub-card__authors"><b>Jabbour, J.</b></p>
-                    <div class="pub-card__venue">VLSI-Arch Undergraduate Research Presentations &middot; Harvard University, Cambridge, MA &middot; 2021 &middot; [Unpublished presentation]</div>
+                    <div class="pub-card__tags">
+                      <span class="pub-tag pub-tag--blue">Harvard's VLSI-Arch Undergraduate Research Presentations</span>
+                    </div>
                     <div class="pub-card__actions">
                       <a class="pub-btn" href="pubs/Jason_Jabbour_TinyRobots_VLSI-Arch_Undergraduate_Research_Presentations.pdf" aria-label="Tiny Robots Slides" target="_blank" rel="noopener"><span class="ion-document"></span> Slides</a>
                     </div>
@@ -1269,13 +1522,43 @@
             <div class="news-timeline">
 
               <div class="news-row">
+                <div class="news-year">2025</div>
+                <div class="news-items">
+                  <div class="news-item">
+                    <a href="https://mlsysbook.ai/" aria-label="Harvard ML Systems Textbook">
+                      <span class="ion-link"></span>
+                      Machine Learning Systems textbook reaches 243K+ readers, 24K+ GitHub stars, and readers in 180+ countries
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="news-row">
+                <div class="news-year">2024</div>
+                <div class="news-items">
+                  <div class="news-item">
+                    <a href="https://blog.tensorflow.org/2024/11/mlsysbookai-principles-and-practices-of-machine-learning-systems-engineering.html" aria-label="TensorFlow Blog Feature">
+                      <span class="ion-link"></span>
+                      Featured in Google's TensorFlow blog for our contribution to the ML community.
+                    </a>
+                  </div>
+
+                  <div class="news-item">
+                    <span class="ion-link"></span>
+                    Awarded the NSF Graduate Research Fellowship Program (GRFP)
+                  </div>
+                </div>
+              </div>
+
+              <div class="news-row">
                 <div class="news-year">2023</div>
                 <div class="news-items">
                   <div class="news-item">
                     <a href="https://sites.google.com/bu.edu/roboarch2023/call-for-abstracts?authuser=0#h.wugadty5t34u" aria-label="MICRO RoboARCH 2023 Workshop Program Committee"><span class="ion-link"></span> MICRO RoboARCH 2023 Workshop Program Committee</a>
                   </div>
                   <div class="news-item">
-                    <a href="https://www.robot.t.u-tokyo.ac.jp/TCPEBRAS_IROS2023/awards.html" aria-label="IROS 2023 Workshop Best Paper Award"><span class="ion-link"></span> IROS 2023 Workshop Best Paper Award</a>
+                    <!-- <a href="https://www.robot.t.u-tokyo.ac.jp/TCPEBRAS_IROS2023/awards.html" aria-label="IROS 2023 Workshop Best Paper Award"><span class="ion-link"></span> IROS 2023 Workshop Best Paper Award</a> -->
+                    <a href="https://web.archive.org/web/20240304193941/https://www.robot.t.u-tokyo.ac.jp/TCPEBRAS_IROS2023/awards.html" aria-label="IROS 2023 Workshop Best Paper Award"><span class="ion-link"></span> IROS 2023 Workshop Best Paper Award</a>
                   </div>
                 </div>
               </div>
@@ -1290,7 +1573,8 @@
                     <a href="https://realworldrobots.github.io#program-committee" aria-label="RSS Mind the Gap 2022 Workshop Program Committee"><span class="ion-link"></span> RSS Mind the Gap 2022 Workshop Program Committee</a>
                   </div>
                   <div class="news-item">
-                    <a href="https://engineering.virginia.edu/departments/engineering-systems-and-environment/ese-2022-final-exercises" aria-label="Louis T Rader Outstanding Undergraduate Academic Award"><span class="ion-link"></span> Louis T. Rader Outstanding Undergraduate Academic Award</a>
+                    <!-- <a href="https://engineering.virginia.edu/departments/engineering-systems-and-environment/ese-2022-final-exercises" aria-label="Louis T Rader Outstanding Undergraduate Academic Award"><span class="ion-link"></span> Louis T. Rader Outstanding Undergraduate Academic Award</a> -->
+                    <a href="https://web.archive.org/web/20230320223830/https://engineering.virginia.edu/departments/engineering-systems-and-environment/ese-2022-final-exercises" aria-label="Louis T Rader Outstanding Undergraduate Academic Award"><span class="ion-link"></span> Louis T. Rader Outstanding Undergraduate Academic Award</a>
                   </div>
                   <div class="news-item">
                     <a href="https://engineering.virginia.edu/sites/default/files/common/departments/engineering-systems-and-environment/2022%20Best%20Paper%20Awards.pdf" aria-label="IEEE SIEDS 2022 Best Paper Award"><span class="ion-link"></span> IEEE SIEDS 2022 Best Paper Award</a>
@@ -1302,16 +1586,18 @@
                 <div class="news-year">2021</div>
                 <div class="news-items">
                   <div class="news-item">
-                    <a href="https://engineering.virginia.edu/systems-engineering-undergraduate-wins-cybersecurity-competition" aria-label="Cybersecurity Competition"><span class="ion-link"></span> Systems Engineering Undergraduate Wins Cybersecurity Competition</a>
+                    <!-- <a href="https://engineering.virginia.edu/systems-engineering-undergraduate-wins-cybersecurity-competition" aria-label="Cybersecurity Competition"><span class="ion-link"></span> Systems Engineering Undergraduate Wins Cybersecurity Competition</a> -->
+                    <a href="https://web.archive.org/web/20230131235424/https://engineering.virginia.edu/systems-engineering-undergraduate-wins-cybersecurity-competition" aria-label="Cybersecurity Competition"><span class="ion-link"></span> Systems Engineering Undergraduate Wins Cybersecurity Competition</a>
                   </div>
                   <div class="news-item">
-                    <a href="https://cyberinitiative.org/cci-news/2021/cyber-camp-winners.html" aria-label="Deloitte CCI Cyber Camp Winners"><span class="ion-link"></span> Announcing Deloitte CCI Cyber Camp Winners</a>
+                    <!-- <a href="https://cyberinitiative.org/cci-news/2021/cyber-camp-winners.html" aria-label="Deloitte CCI Cyber Camp Winners"><span class="ion-link"></span> Announcing Deloitte CCI Cyber Camp Winners</a> -->
+                    <a href="https://web.archive.org/web/20251206063945/https://cyberinitiative.org/cci-news/2021/cyber-camp-winners.html" aria-label="Deloitte CCI Cyber Camp Winners"><span class="ion-link"></span> Announcing Deloitte CCI Cyber Camp Winners</a>
                   </div>
                   <div class="news-item">
                     <a href="https://cdn.ymaws.com/www.vwea.org/resource/collection/9B14A2F9-0572-488F-8AAB-85C3353D7D99/Conduit_Fall2021_final.pdf" aria-label="VWEA Scholarship"><span class="ion-link"></span> Congratulations to the Following Winners of VWEA&rsquo;s 2021 Scholarships</a>
                   </div>
                   <div class="news-item">
-                    <a href="https://engineering.virginia.edu/uva-team-wins-environmental-design-competition-qualifies-national-event" aria-label="UVA Team Wins Environmental Design Competition"><span class="ion-link"></span> UVA Team Wins Environmental Design Competition Qualifies for National Event</a>
+                    <a href="https://engineering.virginia.edu/department/civil-and-environmental-engineering/blogs/uva-team-wins-environmental-design-competition-qualifies-national-event" aria-label="UVA Team Wins Environmental Design Competition"><span class="ion-link"></span> UVA Team Wins Environmental Design Competition Qualifies for National Event</a>
                   </div>
                   <div class="news-item">
                     <a href="https://cdn.ymaws.com/www.vwea.org/resource/collection/9B14A2F9-0572-488F-8AAB-85C3353D7D99/Conduit_Fall2020.pdf" aria-label="UVA Represents VWEA"><span class="ion-link"></span> UVA Represents VWEA at 2020 WEFTEC Connect Student Design Competition</a>
